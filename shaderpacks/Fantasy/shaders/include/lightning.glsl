@@ -8,3 +8,6 @@ if (isLeaf) {
     float leafLight = 0.6 * max(dot(normal, -lightDir), 0.0);
     finalLightColor += vec3(1.0, 0.9, 0.6) * leafLight;
 }
+
+float cloudShadow = getCloudShadow(worldPos, frameTimeCounter);
+finalLightColor *= cloudShadow;
