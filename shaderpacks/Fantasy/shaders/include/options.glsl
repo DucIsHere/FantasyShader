@@ -3,6 +3,8 @@ uniform int aurora_color;
 uniform float fog_strength;
 uniform float bloom_strength;
 uniform int water_mode; // 0 = Vanilla, 1 = Unbound
+uniform float water_reflect_speed;
+uniform float water_wave_strength;
 
 
 vec3 getAuroraColor() {
