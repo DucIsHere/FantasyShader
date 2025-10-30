@@ -1,9 +1,10 @@
 vec3 baseColor = texture(blockTex, uv).rgb;
 float sunLightFactor = max(dot(normal, sunDir), 0.0);
 float moonLightFactor = max(dot(normal, moonDir), 0.0);
-// trong terrain.fsh
-float portalProximity = smoothstep(3.0, 0.0, distance(worldPos, portalPos));
-fragColor.rgb += portalProximity * vec3(0.3, 0.1, 0.5);
+float portalDist = length(worldPos - portalPos);
+float portalAura = smoothstep(5.0, 0.0, portalDist);
+fragColor.rgb += portalAura * vec3(0.25, 0.1, 0.4);
+
 
 
 // Ambient
