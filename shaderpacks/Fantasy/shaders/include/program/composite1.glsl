@@ -25,6 +25,8 @@ void main() {
     vec4 color = texture2D(colortex0, texCoord);
     float depth = texture2D(depthtex0, texCoord).r;
 
+    color.rgb = max(color.rgb - 0.7, 0.0);
+
     //=== PLACE YOUR EFFECTS BELOW ===//
     // Example placeholder:
     // color.rgb += sin(frameTimeCounter + depth * 10.0) * 0.05;
